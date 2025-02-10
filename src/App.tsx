@@ -11,25 +11,25 @@ function Home() {
   return (
     <div className="flex flex-col justify-center items-center min-h-screen w-full bg-white">
       <div className="bg-blue-500 p-6 rounded-lg shadow-lg w-1/2 text-center mb-8">
-        <h1 className="text-2xl font-bold text-yellow mb-4">Home Page</h1>
+        <h1 className="text-2xl font-bold text-yellow-500 mb-4">Home Page</h1>
         <p className="text-blue-100">React, TailwindCSS, React Router, and Redux are working</p>
       </div>
 
       {/* Counter section below the text */}
-      <div className="bg-white p-6 rounded-lg shadow-lg w-1/2 text-center">
+      <div className="bg-blue-500 p-6 rounded-lg shadow-lg w-1/2 text-center">
         <h2 className="text-2xl font-bold mb-4">Redux Counter</h2>
-        <p className="text-lg text-gray-800">
+        <p className="text-lg text-white">
           Current Count: <span className="font-bold text-xl">{count}</span>
         </p>
         <div className="mt-4">
           <button
-            className="px-6 py-2 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition mr-4"
+            className="px-6 py-2 !bg-yellow-500 text-black rounded-lg shadow-md hover:bg-blue-700 transition mr-4"
             onClick={() => dispatch(increment())}
           >
             Increment
           </button>
           <button
-            className="px-6 py-2 bg-red-600 text-white rounded-lg shadow-md hover:bg-red-700 transition"
+            className="px-6 py-2 !bg-yellow-500 text-black rounded-lg shadow-md hover:bg-red-700 transition"
             onClick={() => dispatch(decrement())}
           >
             Decrement
