@@ -1,36 +1,22 @@
-import { BrowserRouter as Router, Routes, Route, NavLink } from "react-router-dom";
-import BitcoinPrice from "./components/BitcoinPrice";
+import React from "react";
+import BinanceBtcPrice from "./components/BinanceBtcPrice"; // Adjust the import paths accordingly
+import BinanceBitcoinPrice from "./components/BinanceBitcoinPrice";
 
-function App() {
+const App = () => {
   return (
-    <Router>
-      <nav className="flex justify-center gap-4 p-4 bg-black-500">
-        <NavLink
-          to="/"
-          className={({ isActive }) =>
-            `px-6 py-3 !text-white text-lg rounded-lg shadow-md transition ${
-              isActive ? "bg-blue-500" : "bg-gray-600 hover:bg-gray-700"
-            }`
-          }
-        >
-          Home
-        </NavLink>
-      </nav>
+    <div>
+      <h1 className="text-center text-2xl font-bold mt-6">Crypto Price Dashboard</h1>
 
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <div className="flex flex-col justify-center items-center min-h-screen w-full bg-white">
-              <div className="mt-4"> {/* Reduced margin from mt-8 to mt-4 */}
-                <BitcoinPrice />
-              </div>
-            </div>
-          }
-        />
-      </Routes>
-    </Router>
+      <div className="flex justify-center mt-8 space-x-8"> {/* Flexbox for side-by-side layout */}
+        <div className="w-full sm:w-[45%] lg:w-[45%]"> {/* Each component takes 45% of the width */}
+          <BinanceBtcPrice /> {/* Display the BinanceBtcPrice component */}
+        </div>
+        <div className="w-full sm:w-[45%] lg:w-[45%]"> {/* Each component takes 45% of the width */}
+          <BinanceBitcoinPrice /> {/* Display the BinanceBitcoinPrice component */}
+        </div>
+      </div>
+    </div>
   );
-}
+};
 
 export default App;
